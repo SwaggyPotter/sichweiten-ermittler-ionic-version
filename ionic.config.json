@@ -1,0 +1,8 @@
+{
+  "name": "Sichweiten-Ermittler",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "4a18c86a"
+}
