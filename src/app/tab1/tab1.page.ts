@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { firebaseConfiguration } from 'firebase-login';
+import { initializeApp } from 'firebase/app';
+import { getAnalytics } from "firebase/analytics";
 
 @Component({
   selector: 'app-tab1',
@@ -7,6 +10,11 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
-  constructor() {}
+  constructor() {
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfiguration);
+    const analytics = getAnalytics(app);
+    console.log(app)
+  }
 
 }
