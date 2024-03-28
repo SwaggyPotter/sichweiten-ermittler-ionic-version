@@ -1,0 +1,172 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.calcContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.dropDownItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    height: 50px;
+}
+
+.dropDownItem:hover {
+    background-color: #2980B9;
+    cursor: pointer;
+}
+
+.dropDownItem:active {
+    background-color: #0be016;
+}
+
+.itemContainer {
+    width: 300px;
+}
+
+#viewPoint {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#resetBTNContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#resetBTN {
+    background-color: #3498DB;
+    width: 300px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+#resetBTN:hover {
+    cursor: pointer;
+    background-color: #2980B9;
+}
+
+#resetBTN:active {
+    background-color: #0be016;
+
+}
+
+.highline {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: yellow;
+    margin: 0;
+    margin-bottom: 100px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#calcButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    background-color: #3498DB;
+    height: 50px;
+    color: white;
+}
+
+
+#calcButton:hover {
+    background-color: #2980B9;
+    cursor: pointer;
+}
+
+#calcButton:active {
+    background-color: #0be016;
+}
+
+datalist {
+    display: flex;
+    direction: rtl;
+    justify-content: space-between;
+}
+
+option {
+    padding: 0;
+}
+
+input[type="range"] {
+    width: 30px;
+    margin: 0;
+    width: 300px;
+}
+
+.speedContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    display: none;
+}
+
+/* Dropdown Button */
+.dropbtn {
+    background-color: #3498DB;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    min-width: 300px;
+    margin-bottom: 10px;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover,
+.dropbtn:focus {
+    background-color: #2980B9;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {
+    display: block;
+}
