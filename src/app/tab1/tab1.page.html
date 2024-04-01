@@ -12,15 +12,15 @@
     <div class="dropdown">
       <button id="lineDropDownBtn" (click)="openDropDownLine()" class="dropbtn">Linie Auswählen</button>
       <div id="lineChoose" class="dropdown-content itemContainer">
-        <p class="dropDownItem" (click)="chooseLine('U1')">U1</p>
-        <p class="dropDownItem" (click)="chooseLine('U2')">U2</p>
-        <p class="dropDownItem" (click)="chooseLine('U3')">U3</p>
-        <p class="dropDownItem" (click)="chooseLine('U4')">U4</p>
-        <p class="dropDownItem" (click)="chooseLine('U5')">U5</p>
-        <p class="dropDownItem" (click)="chooseLine('U6')">U6</p>
-        <p class="dropDownItem" (click)="chooseLine('U7')">U7</p>
-        <p class="dropDownItem" (click)="chooseLine('U8')">U8</p>
-        <p class="dropDownItem" (click)="chooseLine('U9')">U9</p>
+        <p class="dropDownItem" (click)="chooseLine(U1)">U1</p>
+        <p class="dropDownItem" (click)="chooseLine(U2)">U2</p>
+        <p class="dropDownItem" (click)="chooseLine(U3)">U3</p>
+        <p class="dropDownItem" (click)="chooseLine(U4)">U4</p>
+        <p class="dropDownItem" (click)="chooseLine(U5)">U5</p>
+        <p class="dropDownItem" (click)="chooseLine(U6)">U6</p>
+        <p class="dropDownItem" (click)="chooseLine(U7)">U7</p>
+        <p class="dropDownItem" (click)="chooseLine(U8)">U8</p>
+        <p class="dropDownItem" (click)="chooseLine(U9)">U9</p>
       </div>
     </div>
     <div class="dropdown">
@@ -38,8 +38,8 @@
     <div class="dropdown">
       <button id="groupChoosen" (click)="openDropDownGroup()" class="dropbtn">Gruppe wählen</button>
       <div id="group" class="dropdown-content itemContainer">
-        <p class="dropDownItem" onclick="chooseGroup(`KG`)">Kleingruppe</p>
-        <p class="dropDownItem" onclick="chooseGroup(`AG`)">Arbeitsgruppe</p>
+        <p class="dropDownItem" (click)="chooseGroup(KG)">Kleingruppe</p>
+        <p class="dropDownItem" (click)="chooseGroup(AG)">Arbeitsgruppe</p>
       </div>
     </div>
     <div class="dropdown">

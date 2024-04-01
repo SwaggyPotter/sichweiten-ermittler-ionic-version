@@ -1,3 +1,5 @@
+import { trackData } from "./data";
+export const trackDT = new trackData()
 export let lineList = document.getElementById('undergroundLine')
 export let choosenLineCounter = 0;
 export let stationChooser = document.getElementById('station')
@@ -13,10 +15,18 @@ export let track
 export let stationBtn = document.getElementById('stationDropdownBtn')
 export let movableSpeedBar = document.getElementById('speedRange')
 export let choosedUndergroundLine
+export let u1Names = trackDT.u1Names
+export let u2Names = trackDT.u2Names
+export let u3Names = trackDT.u3Names
+export let u4Names = trackDT.u4Names
+export let u5Names = trackDT.u5Names
+export let u6Names = trackDT.u6Names
+export let u7Names = trackDT.u7Names
+export let u8Names = trackDT.u8Names
+export let u9Names = trackDT.u9Names
 
-export function greetings() {
-    console.log('Hallo welt')
-}
+
+
 /**
  * Eventlistener für den Regler für das Tempo (Click Event)
  
@@ -178,7 +188,8 @@ export function setSpeedRange() {
  * Lädt die Bahnhofnamen auf der Strecke
  */
 export function chooseLine(line) {
-    lineDropDownBtn.innerText = line
+    lineDropDownBtn = document.getElementById('lineDropDownBtn')
+    lineDropDownBtn.innerText = line.toString()
     choosedUndergroundLine = line
     if (line == 'U1') {
         loadUndergroundLine(u1Names)
@@ -232,27 +243,27 @@ export function chooseGroup(gr) {
         group = 'AG'
         document.getElementById('groupChoosen').innerText = `Arbeitsgruppe`
         document.getElementById('timeChoose').innerHTML = `
-        <p class="dropDownItem"  onclick="timeChoosed(10)">10s</p>
-        <p class="dropDownItem"  onclick="timeChoosed(20)">20s</p>`
+        <p class="dropDownItem"  (click)="timeChoosed(10)">10s</p>
+        <p class="dropDownItem"  (click)="timeChoosed(20)">20s</p>`
     }
     else if (gr == 'KG') {
         group = 'KG'
         document.getElementById('groupChoosen').innerText = `Kleingruppe`
         document.getElementById('timeChoose').innerHTML = `
-        <p class="dropDownItem" onclick="timeChoosed(7)">7s</p>
-        <p class="dropDownItem" onclick="timeChoosed(10)">10s</p>
-        <p class="dropDownItem" onclick="timeChoosed(15)">15s</p>
-        <p class="dropDownItem" onclick="timeChoosed(20)">20s</p>
+        <p class="dropDownItem" (click)="timeChoosed(7)">7s</p>
+        <p class="dropDownItem" (click)="timeChoosed(10)">10s</p>
+        <p class="dropDownItem" (click)="timeChoosed(15)">15s</p>
+        <p class="dropDownItem" (click)="timeChoosed(20)">20s</p>
         `
     }
 
-    if (chGroup == "KG") {
+    if (gr == "KG") {
         document.getElementById('groupChoosen').innerText = "Kleingruppe"
     }
-    else if (chGroup == "AG") {
+    else if (gr == "AG") {
         document.getElementById('groupChoosen').innerText = "Arbeitsgruppe"
     }
-    group = chGroup
+    group = gr
 }
 
 
