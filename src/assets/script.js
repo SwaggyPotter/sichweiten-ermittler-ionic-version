@@ -12,6 +12,7 @@ export let lineDropDownBtn = document.getElementById('lineDropDownBtn')
 export let group
 export let time
 export let track
+export let speed
 export let stationBtn = document.getElementById('stationDropdownBtn')
 export let movableSpeedBar = document.getElementById('speedRange')
 export let choosedUndergroundLine
@@ -24,6 +25,17 @@ export let u6Names = trackDT.u6Names
 export let u7Names = trackDT.u7Names
 export let u8Names = trackDT.u8Names
 export let u9Names = trackDT.u9Names
+export let u1 = trackDT.u1
+export let u2 = trackDT.u2
+export let u3 = trackDT.u3
+export let u4 = trackDT.u4
+export let u5 = trackDT.u5
+export let u6 = trackDT.u6
+export let u7 = trackDT.u7
+export let u8 = trackDT.u8
+export let u9 = trackDT.u9
+
+
 
 
 
@@ -82,7 +94,7 @@ export function changeValueToSpeed(percent) {
  * Lädt die Banhöfe in kürzeln je nach ausgewählter linie
  */
 export function stationChoosed(station) {
-    stationBtn.innerText = station
+    document.getElementById('stationDropdownBtn').innerText = station
     if (choosedUndergroundLine == 'U1') {
         lineData = u1[station]
     }
@@ -226,10 +238,18 @@ export function chooseLine(line) {
  * @param {string} lineNames Linien Name U1,U2,U3.....
  */
 export function loadUndergroundLine(lineNames) {
-    document.getElementById('station').innerHTML = ''
+    const stationElement = document.getElementById('station');
+    stationElement.innerHTML = '';
+
     for (let i = 0; i < lineNames.length; i++) {
         const element = lineNames[i];
-        document.getElementById('station').innerHTML += `<p class="dropDownItem"  onclick="stationChoosed('${lineNames[i]}')">${lineNames[i]}</p>`
+        const pElement = document.createElement('p');
+        pElement.className = 'dropDownItem';
+        pElement.textContent = lineNames[i];
+        pElement.addEventListener('click', () => {
+            stationChoosed(lineNames[i]);
+        });
+        stationElement.appendChild(pElement);
     }
 }
 
@@ -239,31 +259,46 @@ export function loadUndergroundLine(lineNames) {
  * @param {string} gr Gruppenart (Klein-, Arbeitsgruppe)
  */
 export function chooseGroup(gr) {
-    if (gr == 'AG') {
-        group = 'AG'
-        document.getElementById('groupChoosen').innerText = `Arbeitsgruppe`
-        document.getElementById('timeChoose').innerHTML = `
-        <p class="dropDownItem"  (click)="timeChoosed(10)">10s</p>
-        <p class="dropDownItem"  (click)="timeChoosed(20)">20s</p>`
-    }
-    else if (gr == 'KG') {
-        group = 'KG'
-        document.getElementById('groupChoosen').innerText = `Kleingruppe`
-        document.getElementById('timeChoose').innerHTML = `
-        <p class="dropDownItem" (click)="timeChoosed(7)">7s</p>
-        <p class="dropDownItem" (click)="timeChoosed(10)">10s</p>
-        <p class="dropDownItem" (click)="timeChoosed(15)">15s</p>
-        <p class="dropDownItem" (click)="timeChoosed(20)">20s</p>
-        `
-    }
+    if (gr === 'AG') {
+        group = 'AG';
+        document.getElementById('groupChoosen').innerText = `Arbeitsgruppe`;
 
-    if (gr == "KG") {
-        document.getElementById('groupChoosen').innerText = "Kleingruppe"
+        // Leere den Inhalt des Elements 'timeChoose'
+        const timeChoose = document.getElementById('timeChoose');
+        timeChoose.innerHTML = '';
+
+        // Erstelle die Dropdown-Elemente für 'AG'
+        const dropdownValues = [10, 20];
+        dropdownValues.forEach(value => {
+            const pElement = document.createElement('p');
+            pElement.className = 'dropDownItem';
+            pElement.textContent = `${value}s`;
+            pElement.addEventListener('click', () => {
+                timeChoosed(value);
+            });
+            timeChoose.appendChild(pElement);
+        });
     }
-    else if (gr == "AG") {
-        document.getElementById('groupChoosen').innerText = "Arbeitsgruppe"
+    else if (gr === 'KG') {
+        group = 'KG';
+        document.getElementById('groupChoosen').innerText = `Kleingruppe`;
+
+        // Leere den Inhalt des Elements 'timeChoose'
+        const timeChoose = document.getElementById('timeChoose');
+        timeChoose.innerHTML = '';
+
+        // Erstelle die Dropdown-Elemente für 'KG'
+        const dropdownValues = [7, 10, 15, 20];
+        dropdownValues.forEach(value => {
+            const pElement = document.createElement('p');
+            pElement.className = 'dropDownItem';
+            pElement.textContent = `${value}s`;
+            pElement.addEventListener('click', () => {
+                timeChoosed(value);
+            });
+            timeChoose.appendChild(pElement);
+        });
     }
-    group = gr
 }
 
 

@@ -2,10 +2,9 @@ import { Component } from '@angular/core';
 import { firebaseConfiguration } from 'firebase-login';
 import { initializeApp } from 'firebase/app';
 import { getAnalytics } from "firebase/analytics";
-import { trackData } from 'src/assets/data';
 import {
   lineData, lineList, choosenLineCounter, stationChooser, choosenSpeed, trackspeed, groupSelector, setableSpeed, lineDropDownBtn, group, time, track, stationBtn
-  , movableSpeedBar, choosedUndergroundLine, u1Names, u2Names, u3Names, u4Names, u5Names, u6Names, u7Names, u8Names, u9Names
+  , movableSpeedBar, choosedUndergroundLine, u1Names, u2Names, u3Names, u4Names, u5Names, u6Names, u7Names, u8Names, u9Names, u1, u2, u3, u4, u5, u6, u7, u8, u9
 } from 'src/assets/script';
 import {
   changeValueToSpeed, openDropDownLine, chooseLine,
@@ -19,7 +18,6 @@ import {
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
-  data = new trackData()
   openDropDownLine = openDropDownLine
   changeValueToSpeed = changeValueToSpeed
   chooseLine = chooseLine
@@ -72,6 +70,15 @@ export class Tab1Page {
   u7Names = u7Names
   u8Names = u8Names
   u9Names = u9Names
+  u1 = u1
+  u2 = u2
+  u3 = u3
+  u4 = u4
+  u5 = u5
+  u6 = u6
+  u7 = u7
+  u8 = u8
+  u9 = u9
 
   constructor() {
 
