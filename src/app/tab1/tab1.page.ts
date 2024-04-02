@@ -79,6 +79,7 @@ export class Tab1Page {
   u7 = u7
   u8 = u8
   u9 = u9
+  
 
   constructor() {
 

@@ -12,7 +12,8 @@ export let lineDropDownBtn = document.getElementById('lineDropDownBtn')
 export let group
 export let time
 export let track
-export let speed
+export let speed = trackDT.speed
+export let views = trackDT.views
 export let stationBtn = document.getElementById('stationDropdownBtn')
 export let movableSpeedBar = document.getElementById('speedRange')
 export let choosedUndergroundLine
