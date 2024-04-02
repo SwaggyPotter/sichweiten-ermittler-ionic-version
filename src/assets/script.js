@@ -37,22 +37,20 @@ export let u8 = trackDT.u8
 export let u9 = trackDT.u9
 
 
+export function addEventListenersToSpeedBar() {
+    const movableSpeedBar = document.getElementById('speedRange');
 
+    if (movableSpeedBar) {
+        movableSpeedBar.addEventListener('click', () => {
+            changeValueToSpeed(movableSpeedBar.value);
+        });
 
+        movableSpeedBar.addEventListener('touchend', () => {
+            changeValueToSpeed(movableSpeedBar.value);
+        });
+    }
+}
 
-/**
- * Eventlistener für den Regler für das Tempo (Click Event)
- 
-movableSpeedBar.addEventListener('click', () => {
-    changeValueToSpeed(movableSpeedBar.value)
-})*/
-
-/**
- * Eventlistener für den Regler für das Tempo (Touch Event)
- 
-movableSpeedBar.addEventListener('touchend', () => {
-    changeValueToSpeed(movableSpeedBar.value)
-})*/
 
 
 /**

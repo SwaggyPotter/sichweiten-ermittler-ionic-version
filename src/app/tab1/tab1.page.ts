@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
 import { firebaseConfiguration } from 'firebase-login';
 import { initializeApp } from 'firebase/app';
 import { getAnalytics } from "firebase/analytics";
@@ -9,7 +9,7 @@ import {
 import {
   changeValueToSpeed, openDropDownLine, chooseLine,
   stationChoosed, chooseTrack, calcView, calcNewView, setSpeedRange,
-  loadUndergroundLine, chooseGroup, timeChoosed, openDropDownStation, openDropDownTrack, openDropDownGroup, openDropDownTime,
+  loadUndergroundLine, chooseGroup, timeChoosed, openDropDownStation, openDropDownTrack, openDropDownGroup, openDropDownTime, addEventListenersToSpeedBar
 } from 'src/assets/script';
 
 @Component({
@@ -79,10 +79,14 @@ export class Tab1Page {
   u7 = u7
   u8 = u8
   u9 = u9
-  
+
 
   constructor() {
 
+  }
+  
+  ngAfterViewInit() {
+    addEventListenersToSpeedBar();
   }
 
 
