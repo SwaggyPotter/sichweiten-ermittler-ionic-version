@@ -1,16 +1,14 @@
-import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
-import { firebaseConfiguration } from 'firebase-login';
-import { initializeApp } from 'firebase/app';
-import { getAnalytics } from "firebase/analytics";
+import { Component } from '@angular/core';
+
 import {
   lineData, lineList, choosenLineCounter, stationChooser, choosenSpeed, trackspeed, groupSelector, setableSpeed, lineDropDownBtn, group, time, track, stationBtn
   , movableSpeedBar, choosedUndergroundLine, u1Names, u2Names, u3Names, u4Names, u5Names, u6Names, u7Names, u8Names, u9Names, u1, u2, u3, u4, u5, u6, u7, u8, u9
-} from 'src/assets/script';
+} from 'src/app/tab1/script';
 import {
   changeValueToSpeed, openDropDownLine, chooseLine,
   stationChoosed, chooseTrack, calcView, calcNewView, setSpeedRange,
   loadUndergroundLine, chooseGroup, timeChoosed, openDropDownStation, openDropDownTrack, openDropDownGroup, openDropDownTime, addEventListenersToSpeedBar
-} from 'src/assets/script';
+} from 'src/app/tab1/script';
 
 @Component({
   selector: 'app-tab1',

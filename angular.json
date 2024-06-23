@@ -35,10 +35,7 @@
               "src/global.scss",
               "src/theme/variables.scss"
             ],
-            "scripts": [
-              "src/assets/data.js",
-              "src/assets/script.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
